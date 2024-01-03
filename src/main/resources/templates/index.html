@@ -1,11 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+      <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title th:text="${model1}"></title>
 </head>
 <body>
-    <h1>WELCOME STORE WEB</h1>
-</body>
+ 
+    <div th:replace="Components/header :: header"></div>
+
+   <div class="text-center m-10">
+  <h1 class=" text-5xl font-bold m-10">Welcome add new task in your profile</h1>
+<p class=" text-1xl">our webservices you can notes everywhere your notes then save your notes!</p>  
+   </div>
+   
+    <h1 class="font-bold text-center m-10 text-5xl">more project in our github</h1>
+   
+   <div class=" flex flex-wrap justify-center items-center hover:transition-all duration-300  text-center transform ease-out hover:translate-y-4 opacity-70 hover:opacity-100">
+	  
+	   <div class="mt-10" th:replace="Components/Card ::Card"></div>
+     <div class="mt-10" th:replace="Components/Card ::Card"></div>
+       <div class="mt-10" th:replace="Components/Card ::Card"></div>
+   </div>
+  <div th:replace="Components/footter :: footter"></div>
+  
+  
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+      const menuButton = document.getElementById('menuButton');
+      const mobileMenu = document.getElementById('navbarSupportedContentY');
+
+      menuButton.addEventListener('click', function () {
+          // Toggle the 'hidden' class to show/hide the mobile menu
+          mobileMenu.classList.toggle('hidden');
+      });
+
+      // Close the mobile menu when a link is clicked
+      const mobileLinks = document.querySelectorAll('#navbarSupportedContentY a');
+
+      mobileLinks.forEach(function (link) {
+          link.addEventListener('click', function () {
+              mobileMenu.classList.add('hidden');
+          });
+      });
+  });
+</script>
+    </body>
 </html>
