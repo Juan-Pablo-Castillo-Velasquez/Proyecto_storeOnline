@@ -9,7 +9,7 @@ public class indexControllers {
 	@GetMapping(value = "/")
 	public String indexPost(Model model) {
 		try {
-			String title1 = "add row notes";
+			String title1 = "Games el amigos";
 			model.addAttribute("model1", title1);
 			return "index";
 		} catch (Exception e) {
@@ -22,6 +22,19 @@ public class indexControllers {
 	public String About() {
 		try {
 			return "about";
+			
+		}catch(Exception e){
+			e.printStackTrace();
+			return "error";
+		}
+	}
+	
+	
+	
+	@GetMapping(value="/games")
+	public String Games() {
+		try {
+			return "games";
 			
 		}catch(Exception e){
 			e.printStackTrace();
