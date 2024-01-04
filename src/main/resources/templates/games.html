@@ -4,9 +4,16 @@
       <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
 </head>
-<body>
+<body >
 	<div th:replace="Components/header :: header"></div>
-	<h1>welcome games to play</h1>
-	<div th:replace="Components/footter :: footter"></div>
+
+	<div class="container mx-auto w-80 mt-7">
+		<div th:replace="Components/submenu :: submenu"></div>
+   </div>
+
+<h3 class="text-center font-bold text-4xl text-pink-700 mt-5">DOwnload your favorite games </h3>
+	
+	<div  th:replace="Components/CardGames :: CardGames"></div>
+	<div th:replace="Components/footter :: footter">
 </body>
 </html>

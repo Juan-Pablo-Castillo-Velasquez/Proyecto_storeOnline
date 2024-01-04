@@ -41,6 +41,17 @@ public class indexControllers {
 			return "error";
 		}
 	}
+
+	@GetMapping(value="/content")
+	public String content(Model model) {
+		try {
+			return "CardGames";
+			
+		}catch(Exception e){
+			e.printStackTrace();
+			return "error";
+		}
+	}
 	/**
 	 * @PostMapping(value = "/xd") public String handlePost(String data, Model
 	 *                    model) { model.addAttribute("info", data);
