@@ -1,8 +1,11 @@
 package bogaty.online.bogaty.Controllers;
 
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+
 
 @Controller // espesificar controllador
 public class indexControllers {
@@ -18,40 +21,41 @@ public class indexControllers {
 		}
 	}
 
-	@GetMapping(value="/about")
+	@GetMapping(value = "/about")
 	public String About() {
 		try {
 			return "about";
-			
-		}catch(Exception e){
-			e.printStackTrace();
-			return "error";
-		}
-	}
-	
-	
-	
-	@GetMapping(value="/games")
-	public String Games() {
-		try {
-			return "games";
-			
-		}catch(Exception e){
+
+		} catch (Exception e) {
 			e.printStackTrace();
 			return "error";
 		}
 	}
 
-	@GetMapping(value="/content")
-	public String content(Model model) {
+	// @GetMapping(value = "/games")
+	// public String Games() {
+	// 	try {
+	// 		return "games";
+
+	// 	} catch (Exception e) {
+	// 		e.printStackTrace();
+	// 		return "error";
+	// 	}
+	// }
+
+	
+	@GetMapping(value = "/CardGames")
+	public String CardGames() {
 		try {
 			return "CardGames";
-			
-		}catch(Exception e){
+
+		} catch (Exception e) {
 			e.printStackTrace();
 			return "error";
 		}
 	}
+
+
 	/**
 	 * @PostMapping(value = "/xd") public String handlePost(String data, Model
 	 *                    model) { model.addAttribute("info", data);
@@ -59,5 +63,5 @@ public class indexControllers {
 	 *                    System.out.println("Data received in POST: " + data);
 	 *                    return "redirect:/xd/result"; }
 	 */
-
+	
 }

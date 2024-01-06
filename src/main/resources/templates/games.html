@@ -7,13 +7,38 @@
 <body >
 	<div th:replace="Components/header :: header"></div>
 
-	<div class="container mx-auto w-80 mt-7">
-		<div th:replace="Components/submenu :: submenu"></div>
-   </div>
-
-<h3 class="text-center font-bold text-4xl text-pink-700 mt-5">DOwnload your favorite games </h3>
 	
-	<div  th:replace="Components/CardGames :: CardGames"></div>
+
+<h3 class="text-center font-bold text-4xl text-pink-700 mt-5">Download your favorite games </h3>
+<div class="container mx-auto w-80 mt-7">
+	<div th:replace="Components/submenu :: submenu"></div>
+</div>
+	<div  class="mt-20 p-10 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-1 mt-4 opacity-80 hover:transition-all duration-500 ease-out transform hover:translate-y-10 hovgrid-cols-1 hover:opacity-100">
+	
+	
+		<div th:each="game : ${datos.games}">
+			<div class="relative w-full p-15 overflow-hidden rounded-lg shadow-md transition-all ease-out duration-300 transform hover:scale-90 hover:translate-x-4 flex flex-col justify-center items-center mx-auto">
+				<!-- Acceder a los valores del juego -->
+				<img th:src="${game.img}" alt="example" class="w-full h-96 object-cover" />
+	
+				<div class="absolute inset-0 flex flex-col justify-center items-center p-4 bg-black bg-opacity-60 transition-opacity opacity-0 hover:opacity-100">
+					
+					<div class="flex items-center text-white mb-2">
+					
+						<p th:text="${game.name}"></p>
+					</div>
+					<a th:href="${game.url}" target="_blank" class="block bg-pink-500 text-white py-2 px-4 rounded-full text-center hover:bg-black font-bold hover:">
+						Descargar
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
 	<div th:replace="Components/footter :: footter">
+		
+		
+
+    
 </body>
 </html>

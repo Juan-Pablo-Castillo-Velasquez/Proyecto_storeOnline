@@ -7,10 +7,13 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <title th:text="${model1}"></title>
     
+
+
+    
 </head>
 <body>
    <!-- TW Elements is free under AGPL, with commercial license required for specific uses. See more details: https://tw-elements.com/license/ and contact us for queries at tailwind@mdbootstrap.com --> 
-<header th:frangment="header">
+<header th:fragment="header">
   <nav class="relative flex w-full items-center justify-between bg-white py-2 text-neutral-600 shadow-lg hover:text-neutral-700 focus:text-neutral-700 dark:bg-neutral-600 dark:text-neutral-200 md:flex-wrap md:justify-start"
         data-te-navbar-ref>
         <div class="flex w-full flex-wrap items-center justify-between px-3">
@@ -62,11 +65,31 @@
       role="button"
       >Get started</a>
 </div>
+ <script>
+	document.addEventListener('DOMContentLoaded', function () {
+      const menuButton = document.getElementById('menuButton');
+      const mobileMenu = document.getElementById('navbarSupportedContentY');
 
+      menuButton.addEventListener('click', function () {
+         
+          mobileMenu.classList.toggle('hidden');
+      });
+
+     
+      const mobileLinks = document.querySelectorAll('#navbarSupportedContentY a');
+
+      mobileLinks.forEach(function (link) {
+          link.addEventListener('click', function () {
+              mobileMenu.classList.add('hidden');
+          });
+      });
+  });
+</script>
 </header>
 
 
+   
     
-    
-    
+</body>
+</html>
      
